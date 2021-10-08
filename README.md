@@ -5,7 +5,7 @@ Project Title / Name: HomeAwayFromHome
 
 Project Description:
 
-This project is about property owners (mostly vacation homes) listing their respective properties as a rental for a temporaru duration of time (days, weeks, months). And, a marketplace where customers come look for properties to rent for a specific duration of time for their vacations.
+This project is about property owners (mostly vacation homes) listing their respective properties as a rental for a temporary duration of time (days, weeks, months). And, a marketplace where customers can look for properties to rent for a specific duration of time for their vacations.
 
 Key sample workflows:
 
