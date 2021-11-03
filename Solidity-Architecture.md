@@ -1,7 +1,7 @@
 Project Name: PearlZZ.ai
-1. PearlZZ B2B Loyalty Alliances Marketplace
-2. PearlZZ Wallet and PearlZZ Exchange
-3. Minting Loyalty Rewards Coupons (earned at certain Loyaltypoint thresholds) as PearlZZ NFTs
+1. PearlZZ.ai B2B Loyalty Alliances Marketplace
+2. PearlZZ.ai Wallet and PearlZZ.ai Exchange
+3. Minting Loyalty Rewards Coupons (earned at certain Loyaltypoint thresholds) as PearlZZ.ai NFTs
 
 Solidity Smart Contract source files, method signatures, and events emitted:
 =============================================================================
