@@ -34,13 +34,18 @@ Solidity Smart Contract source files, method signatures, and events emitted:
 				2.6.1 Emits an event CancelledSellOrderEvent(uint orderId, uint timestamp)
 
 		2.7 transferPoints(
-												string memory addToIssuer, string memory addToAccount, 
-												string memory takeFromIssuer, string memory takeFromAccount, 
-												string memory addToUser, string memory takeFromUser, 
-												uint numOfPoints) 
+						string memory addToIssuer, string memory addToAccount, 
+						string memory takeFromIssuer, string memory takeFromAccount, 
+						string memory addToUser, string memory takeFromUser, 
+						uint numOfPoints) 
 					public onlyOwner returns(uint, uint)
 
 				2.7.1 Emits an event TansferOrderEvent(uint buyOrderId, uint sellOrderId, uint timestamp)
+
+		2.8 mint(
+						uint256 _stakedLoyaltyLiability, 
+						uint256 _totalPtsPromised) 
+					public onlyOwner returns(bool minted)
 
 
 3. 	PearlZZToken.sol - is for minting the PRLZ token

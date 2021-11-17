@@ -1,3 +1,9 @@
+require('babel-register');
+require('babel-polyfill');
+require('dotenv').config();
+const HDWalletProvider = require('truffle-hdwallet-provider-privkey');
+const privateKeys = process.env.PRIVATE_KEYS || ""
+
 /**
  * Use this file to configure your truffle project. It's seeded with some
  * common settings for different networks and features like migrations,
@@ -51,6 +57,17 @@ module.exports = {
 		port: 8545,            // Standard Ganache CLI port
 		network_id: "*",       // Any network (default: none)
  	},
+  kovan: {
+  	provider: function() {
+    	return new HDWalletProvider(
+          privateKeys.split(','), // Array of account private keys
+          `https://kovan.infura.io/v3/${process.env.INFURA_API_KEY}`// Url to an Ethereum Node
+      	)
+      },
+      gas: 5000000,
+      gasPrice: 25000000000,
+      network_id: 42
+  },
     // Another network with more advanced options...
     // advanced: {
     // port: 8777,             // Custom port

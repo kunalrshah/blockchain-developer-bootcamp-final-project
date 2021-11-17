@@ -7,66 +7,76 @@ import "openzeppelin-solidity/contracts/access/Ownable.sol";
 
 import "./GenericContract.sol"; 
 
+/// @title PRLZ Token Contract 
+/// @author Kunal R. Shah
+/// @notice The totalSupply for this contract will start out at zero
+/// @notice When a Loyalty Issuer stakes their loyalty liability on PearlZZ.ai, that's when tokens will be minted
 contract PearlZZToken is GenericContract, Ownable {
   using SafeMath for uint;
 
-    // Variables
-//	address private owner;
+  // Variables
+
+	/// @notice name represents the name of the PearlZZ Token
   string public name = "PearlZZ";
+
+	/// @notice symbol is the symbol of the PearlZZ Token (PRLZ)
   string public symbol = "PRLZ";
+
+	/// @notice version
   string public version = '1.0'; 
+
+	/// @notice decimals represents the number of decimals for the token
   uint256 public decimals = 18;
+
+	/// @notice totalSupply represent the total supply of tokens
+	/// @notice this totalSupply of PearlZZToken increases with each new Loyalty Issuer onboarded to PearlZZ
   uint256 public totalSupply = 0;
+
+	/// @notice totalPtsPromised is meant to represent the collective number of loyalty points taked by loyalty issuers 
 	uint256 public totalPtsPromised = 0;
-  mapping(address => uint256) public balanceOf;
+
+// balanceOf variable isn't currently being used. 
+// But, it could be used to keep an account of the loyalty liability amount staked by each loyalty issuer
+// Given that this contract does't use Loyalty Issuer crypto addresses yet
+// -- it needs at least an issuer name to keep track of loyality liability amounts per issuer
+// -- double check if this is already being tracked in PearlZZExchaneg contract first
+// mapping(address => uint256) public balanceOf;
 
 
-	//
-	// PearlZZToken Constructor function
-	// PearlZZToken will not have any "totalSupply" of tokens until we onboard a Loyalty Issuer 
-	// (brand or business that offers loyalty programs & membership to its customers)
-	// That is to say that we will mint new PRLZ tokens equivalent to the USD Loyalty Liability 
-	// commitments promised/staked by the Loyalty Issuer
-	// --- it seems the compiler doesn't really like the "public" visibility qualifier for 
-	// the constructor. Not that it is an error. But, it does result in a warning saying that it is ignored.
-	// removing "public" qualifier
-	//
-	// constructor() public { 
-	//
+	/// @notice PearlZZToken Constructor
+	/// @notice Tokens will only be minted when a loyalty issuer stakes some of its loyalty liability to PearlZZ
+	/// @dev Each token will be an equivalent of 1 USD
 	constructor() {
     name = "PearlZZ";
     symbol = "PRLZ";
 		//
-		// Initial PearlZZ supply from the constructor's point of view is going to Zero. 
+		// Initial PearlZZ supply from the constructor's point of view is going to be Zero. 
 		// We can change this later, if we feel it is necessary.
 		// 
 		// The only the way the token gets minted is when a Issuer is onboarded 
 		// or when an existing Issuer is adding more of their Loyalty Liability
 		//
 		totalSupply = 0;
-    balanceOf[msg.sender] = totalSupply; 
+//    balanceOf[msg.sender] = totalSupply; 
 
 	} // constructor
 
-	// call this "mint" function while on-boarding a Loyalty Issuer (brand or business) 
-	// to record their USD Loyalty Liability commitments from their active Loyalty Program to PearlZZ
-	// or you may also call this function when a Loyalty Issuer wants to increase their commitment
-	//
-	// there isn't an option that we intend to provide at this point to reduce the Loyalty Liability 
-	// Commitments once staked/committed to PearlZZ
-	//
-	//
-	function mint(uint256 _stakedLoyaltyLiability, uint256 _totalPtsPromised) public onlyOwner returns(bool) {
+	/// @notice Use this when onboarding the Loyalty Liability from a Loyalty Issuer 
+	/// @notice Or when increasing an existing liability commitment from already onboard Loyalty Issuer
+	/// @dev This contract will not provide an option to decrease the Staked Loyalty Liability once committed
+	/// @param _stakedLoyaltyLiability is the Loyalty liability that a Loyalty Issuer is bringing to PearlZZ
+	/// @param _totalPtsPromised is the total number of loyalty points that an issuer has promised to its customers
+	/// @return minted boolean (true or false)
+	function mint(uint256 _stakedLoyaltyLiability, uint256 _totalPtsPromised) public onlyOwner returns(bool minted) {
 
+		minted = false;
 		totalSupply += _stakedLoyaltyLiability; // does this need to be converted to wei value
 		totalPtsPromised += _totalPtsPromised;
-		balanceOf[msg.sender] = totalSupply; 
-
 //		balanceOf[msg.sender] = totalSupply * (10 ** decimals);
 
-		return(true);
+		minted = true;
+		return(minted);
 	} // function mint()
-
 
 } // PearlZZToken
 
