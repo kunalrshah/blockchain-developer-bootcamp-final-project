@@ -1,0 +1,433 @@
+{
+  "contractName": "GenericContract",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "addressValue",
+          "type": "address"
+        }
+      ],
+      "name": "AddressValue",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "stringValue",
+          "type": "string"
+        }
+      ],
+      "name": "StrValue",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "uintValue",
+          "type": "uint256"
+        }
+      ],
+      "name": "UintValue",
+      "type": "event"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.0+commit.c7dfd78e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"addressValue\",\"type\":\"address\"}],\"name\":\"AddressValue\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"string\",\"name\":\"stringValue\",\"type\":\"string\"}],\"name\":\"StrValue\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"uintValue\",\"type\":\"uint256\"}],\"name\":\"UintValue\",\"type\":\"event\"}],\"devdoc\":{\"author\":\"Kunal R. Shah\",\"details\":\"originally was created to provide the onlyOwner modifier implementation to inherit fromsince the contracts were switched to Open Zeppelin Ownable, custom onlyOwner is no longer required\",\"kind\":\"dev\",\"methods\":{},\"title\":\"GenericContract\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"notice\":\"This contract is not meant to have any implementationIt is simply a contract to list out all common events and any other useful variables for all contracts\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/src/contracts/GenericContract.sol\":\"GenericContract\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/src/contracts/GenericContract.sol\":{\"keccak256\":\"0x179ba46e03b12bb2b2be2873213a54e2ec9496a3961fb986c266b3aaf2d434ab\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://67fa2cc1f27b501f0bd9a8970622cf3113fa9d09dec250154ee2ac3c0a263a48\",\"dweb:/ipfs/QmQnkEBVjYchEeWjya84tTWC3T8JhdcD3LMn87WF2H3TnU\"]}},\"version\":1}",
+  "bytecode": "0x6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea26469706673582212207c8f18a15e11f403c00f6284d95342b5a806d262e461254783bd02909078b84064736f6c63430008000033",
+  "deployedBytecode": "0x6080604052600080fdfea26469706673582212207c8f18a15e11f403c00f6284d95342b5a806d262e461254783bd02909078b84064736f6c63430008000033",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "514:492:3:-:0;;;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "514:492:3:-:0;;;;;",
+  "source": "// SPDX-License-Identifier: MIT\r\npragma solidity >=0.7.0 <0.9.0;\r\n \r\n/// @title GenericContract\r\n/// @author Kunal R. Shah\r\n/// @notice This contract is not meant to have any implementation\r\n/// @notice It is simply a contract to list out all common events and any other useful variables for all contracts\r\n/// @dev originally was created to provide the onlyOwner modifier implementation to inherit from\r\n/// @dev since the contracts were switched to Open Zeppelin Ownable, custom onlyOwner is no longer required\r\ncontract GenericContract {\r\n\r\n\tevent UintValue(uint256 uintValue);\r\n\tevent StrValue(string stringValue);\r\n\tevent AddressValue(address addressValue);\r\n\r\n//\r\n// Commenting out the code below, as now I'm using OpenZeppelin Ownable.sol\r\n//\r\n//\r\n//  // Variables\r\n//\taddress private owner;\r\n//\r\n//\tconstructor() {\r\n//\t\towner = msg.sender;\r\n//  } // constructor\r\n//\r\n//\tmodifier onlyOwner() {\r\n//        require(msg.sender == owner, \"You're not the owner of the contract\");\r\n//        _;\r\n//\t}\r\n\r\n}\r\n",
+  "sourcePath": "/mnt/c/pr0/blockchain-developer-bootcamp-final-project/src/contracts/GenericContract.sol",
+  "ast": {
+    "absolutePath": "project:/src/contracts/GenericContract.sol",
+    "exportedSymbols": {
+      "GenericContract": [
+        453
+      ]
+    },
+    "id": 454,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 439,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.7",
+          ".0",
+          "<",
+          "0.9",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:31:3"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": {
+          "id": 440,
+          "nodeType": "StructuredDocumentation",
+          "src": "69:445:3",
+          "text": "@title GenericContract\n @author Kunal R. Shah\n @notice This contract is not meant to have any implementation\n @notice It is simply a contract to list out all common events and any other useful variables for all contracts\n @dev originally was created to provide the onlyOwner modifier implementation to inherit from\n @dev since the contracts were switched to Open Zeppelin Ownable, custom onlyOwner is no longer required"
+        },
+        "fullyImplemented": true,
+        "id": 453,
+        "linearizedBaseContracts": [
+          453
+        ],
+        "name": "GenericContract",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "anonymous": false,
+            "id": 444,
+            "name": "UintValue",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 443,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 442,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "uintValue",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 444,
+                  "src": "561:17:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 441,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "561:7:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "560:19:3"
+            },
+            "src": "545:35:3"
+          },
+          {
+            "anonymous": false,
+            "id": 448,
+            "name": "StrValue",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 447,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 446,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "stringValue",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 448,
+                  "src": "598:18:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 445,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "598:6:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "597:20:3"
+            },
+            "src": "583:35:3"
+          },
+          {
+            "anonymous": false,
+            "id": 452,
+            "name": "AddressValue",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 451,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 450,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "addressValue",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 452,
+                  "src": "640:20:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 449,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "640:7:3",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "639:22:3"
+            },
+            "src": "621:41:3"
+          }
+        ],
+        "scope": 454,
+        "src": "514:492:3"
+      }
+    ],
+    "src": "33:975:3"
+  },
+  "legacyAST": {
+    "absolutePath": "project:/src/contracts/GenericContract.sol",
+    "exportedSymbols": {
+      "GenericContract": [
+        453
+      ]
+    },
+    "id": 454,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 439,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.7",
+          ".0",
+          "<",
+          "0.9",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:31:3"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": {
+          "id": 440,
+          "nodeType": "StructuredDocumentation",
+          "src": "69:445:3",
+          "text": "@title GenericContract\n @author Kunal R. Shah\n @notice This contract is not meant to have any implementation\n @notice It is simply a contract to list out all common events and any other useful variables for all contracts\n @dev originally was created to provide the onlyOwner modifier implementation to inherit from\n @dev since the contracts were switched to Open Zeppelin Ownable, custom onlyOwner is no longer required"
+        },
+        "fullyImplemented": true,
+        "id": 453,
+        "linearizedBaseContracts": [
+          453
+        ],
+        "name": "GenericContract",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "anonymous": false,
+            "id": 444,
+            "name": "UintValue",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 443,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 442,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "uintValue",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 444,
+                  "src": "561:17:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 441,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "561:7:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "560:19:3"
+            },
+            "src": "545:35:3"
+          },
+          {
+            "anonymous": false,
+            "id": 448,
+            "name": "StrValue",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 447,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 446,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "stringValue",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 448,
+                  "src": "598:18:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 445,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "598:6:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "597:20:3"
+            },
+            "src": "583:35:3"
+          },
+          {
+            "anonymous": false,
+            "id": 452,
+            "name": "AddressValue",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 451,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 450,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "addressValue",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 452,
+                  "src": "640:20:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 449,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "640:7:3",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "639:22:3"
+            },
+            "src": "621:41:3"
+          }
+        ],
+        "scope": 454,
+        "src": "514:492:3"
+      }
+    ],
+    "src": "33:975:3"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.0+commit.c7dfd78e.Emscripten.clang"
+  },
+  "networks": {
+    "1637551273688": {
+      "events": {},
+      "links": {},
+      "address": "0xEeF46259a7862d5d183BF2e5377A11690C279380",
+      "transactionHash": "0xfbd0c3437d65e30126c608e3d9716392cfc1e6f498c6e82cf8de6cfe318a2a31"
+    }
+  },
+  "schemaVersion": "3.4.3",
+  "updatedAt": "2021-11-23T02:30:11.240Z",
+  "networkType": "ethereum",
+  "devdoc": {
+    "author": "Kunal R. Shah",
+    "details": "originally was created to provide the onlyOwner modifier implementation to inherit fromsince the contracts were switched to Open Zeppelin Ownable, custom onlyOwner is no longer required",
+    "kind": "dev",
+    "methods": {},
+    "title": "GenericContract",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "notice": "This contract is not meant to have any implementationIt is simply a contract to list out all common events and any other useful variables for all contracts",
+    "version": 1
+  }
+}

@@ -2,7 +2,6 @@
 
 # dependencies
 /public/krs.*
-/src/abis
 /src/components/save
 /node_modules
 /krs.build
