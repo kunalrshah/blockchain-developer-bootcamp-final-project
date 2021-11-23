@@ -37,6 +37,7 @@
     "react-router": "^5.2.1",
     "react-router-dom": "^5.3.0",
     "react-scripts": "3.4.3",
+		"serve": "^11.3.0",
     "redux": "^4.0.5",
     "redux-logger": "3.0.6",
     "reselect": "4.0.0",
@@ -51,12 +52,13 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "start-serve-s-keeping-it-here-for-future-reference": "serve -s build",
+    "krs-start": "serve -s build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "vdebug": "truffle run debug start",
     "tdebug": "truffle debug",
+		"heroku-prebuild": "npm install",
 		"heroku-postbuild": "npm run build"
   },
   "eslintConfig": {
