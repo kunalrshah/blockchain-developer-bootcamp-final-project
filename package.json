@@ -56,7 +56,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "vdebug": "truffle run debug start",
-    "tdebug": "truffle debug"
+    "tdebug": "truffle debug",
 		"heroku-postbuild": "npm run build"
   },
   "eslintConfig": {
