@@ -50,12 +50,14 @@
     "web3": "1.2.6"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "dev": "react-scripts start",
+    "start": "serve -s build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "vdebug": "truffle run debug start",
     "tdebug": "truffle debug"
+		"heroku-postbuild": "npm run build"
   },
   "eslintConfig": {
     "extends": [
