@@ -46,6 +46,7 @@ export const loadPearlZZExchange = async (web3, networkId, dispatch) => {
 		console.log("loadPearlZZExchange: Interaction.js: networkId: ", networkId, "]")
     const exchange = new web3.eth.Contract(PearlZZExchange.abi, 
 													PearlZZExchange.networks[networkId].address)
+		console.log("Exchange object:[", exchange, "].")
     dispatch(pearlzzExchangeLoaded(exchange))
     return exchange
   } catch (error) {

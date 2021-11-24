@@ -37725,15 +37725,27 @@
     "version": "0.8.0+commit.c7dfd78e.Emscripten.clang"
   },
   "networks": {
+    "42": {
+      "events": {},
+      "links": {},
+      "address": "0x1350FcfFD5CfDB26c01Df8aAA029069d383d572b",
+      "transactionHash": "0x6a8e2123f6004384c4e6255cf444fc9fdfb9a9d3d0c8d4bee21955c1fd35aca9"
+    },
     "1637551273688": {
       "events": {},
       "links": {},
       "address": "0xbBb8213B455359b6eA92d245f5725879D25D1ed7",
       "transactionHash": "0xef625c3b698ca81db8792dff19918f6c8a6a14e6d6b5aa90601405f08c12bb65"
+    },
+    "1637723993987": {
+      "events": {},
+      "links": {},
+      "address": "0x1350FcfFD5CfDB26c01Df8aAA029069d383d572b",
+      "transactionHash": "0x26817c039ceb8c253b3cde33951c4083f2ec9174ba5600dbfc354f45b79b1c06"
     }
   },
   "schemaVersion": "3.4.3",
-  "updatedAt": "2021-11-23T02:30:11.257Z",
+  "updatedAt": "2021-11-24T07:08:24.883Z",
   "networkType": "ethereum",
   "devdoc": {
     "author": "Kunal R. Shah",
