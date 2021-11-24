@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: MIT
 // pragma solidity >=0.4.22 <0.9.0;
-pragma solidity >=0.7.0 <0.9.0;
+// pragma solidity >=0.7.0 <0.9.0;
+pragma solidity 0.8.0;
 
 import "openzeppelin-solidity/contracts/utils/math/SafeMath.sol";
 import "openzeppelin-solidity/contracts/access/Ownable.sol";
@@ -164,7 +165,7 @@ contract PearlZZExchange is GenericContract, Ownable {
 	/// @param numOfPoints Number of points to Buy from the PearlZZ Points Exchange
 	/// @return OrderId for the newly created buy order
 	function buyPoints(string memory addToIssuer, string memory addToAccount, 
-						string memory addToUser, uint256 numOfPoints) public returns(uint256) {
+						string memory addToUser, uint256 numOfPoints) public onlyOwner returns(uint256) {
 		numOfBuyOrders = numOfBuyOrders.add(1);
 		buyOrders[numOfBuyOrders] = BuyOrderStruct(numOfBuyOrders, addToIssuer, addToAccount, 
 																	addToUser, numOfPoints, 
@@ -183,7 +184,7 @@ contract PearlZZExchange is GenericContract, Ownable {
 	/// @return buyOrderId the same orderId which was chosen for fulfillment by the user from the PearlZZ DApp
 	/// @return sellOrderId Newly created sellOrder to fulfill the buyOrder
 	function fulfillABuyOrder(uint256 buyOrderId, string memory takeFromIssuer, 
-						string memory takeFromAccount, string memory takeFromUser) public returns(uint256, uint256) {
+						string memory takeFromAccount, string memory takeFromUser) public onlyOwner returns(uint256, uint256) {
 		require(buyOrderId > 0 && buyOrderId <= numOfBuyOrders, "Error: orderId out of valid range. Invalid Id.");
 		require(!buyOrdersFulfilled[buyOrderId], "Error: Buy Order already fulfilled.");
 		require(!buyOrdersCancelled[buyOrderId], "Error: Buy Order already cancelled.");
@@ -205,7 +206,7 @@ contract PearlZZExchange is GenericContract, Ownable {
 	/// @param numOfPoints Number of points to Sell on the PearlZZ Points Exchange
 	/// @return OrderId for the newly created sell order
 	function sellPoints(string memory takeFromIssuer, string memory takeFromAccount, 
-							string memory takeFromUser, uint256 numOfPoints ) public returns(uint256) {
+							string memory takeFromUser, uint256 numOfPoints ) public onlyOwner returns(uint256) {
 		numOfSellOrders = numOfSellOrders.add(1);
 		sellOrders[numOfSellOrders] = SellOrderStruct(numOfSellOrders, takeFromIssuer, 
 																		takeFromAccount, takeFromUser, 
@@ -224,7 +225,7 @@ contract PearlZZExchange is GenericContract, Ownable {
 	/// @return sellOrderId the same orderId which was chosen for fulfillment by the user from the PearlZZ DApp
 	/// @return buyOrderId Newly created buyOrder to fulfill the sellOrder
 	function fulfillASellOrder(uint256 sellOrderId, string memory addToIssuer, 
-							string memory addToAccount, string memory addToUser) public returns(uint256, uint256) {
+							string memory addToAccount, string memory addToUser) public onlyOwner returns(uint256, uint256) {
 		require(sellOrderId > 0 && sellOrderId <= numOfSellOrders, "Error: orderId out of valid range. Invalid Id.");
 		require(!sellOrdersFulfilled[sellOrderId], "Error: Sell Order already fulfilled.");
 		require(!sellOrdersCancelled[sellOrderId], "Error: Sell Order already cancelled.");
