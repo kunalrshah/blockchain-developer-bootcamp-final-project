@@ -39,16 +39,14 @@ https://pearlzz.herokuapp.com
 - this seeds in the initial five "loyalty issuer" brands with their respective "Loyalty Liability Amounts" to be staked on PearlZZ
 - ===> This results in five Smart Contract transactions for "minting" new PRLZ tokens equivalent to each of the brands' "Loyalty Liability Amount" they are staking on PearlZZ
 - ===> You should see five Loyalty Issuers listed on the page with their respective "Loyalty Liability Amounts" and the corresponding "Liability Points Promised" amount
-- 
 ### Step-2: Either click on "Go to Dashboard" from the Issuers page or go straight to either "localhost:3000" or "https://pearlzz.herokuapp.com"
 
-- ====> As soon as you go to this page, 
-- ====> the DApp is designed to seed in four test "Buy" orders and four test "Sell" orders on the "PearlZZ Exchange"
-
-- ====> Please note the "Market Cap" value on the top left portion of the screen
-- ====> This is the total amount of "Loyalty Liability Amounts" across all the five "loyalty issuer" brands that were configured in the first step
-- ====> And, it is also the number of PRLZ tokens minted as a result on the PearlZZ Exchange
-- ====> Thereby making it the "Market Cap" of the PearlZZ Exchange in terms of the total dollar value of the cumulative number of points promised across all the issuers that were onboarded
+- As soon as you go to this page, 
+- the DApp is designed to seed in four test "Buy" orders and four test "Sell" orders on the "PearlZZ Exchange"
+- Please note the "Market Cap" value on the top left portion of the screen
+- This is the total amount of "Loyalty Liability Amounts" across all the five "loyalty issuer" brands that were configured in the first step
+- And, it is also the number of PRLZ tokens minted as a result on the PearlZZ Exchange
+- Thereby making it the "Market Cap" of the PearlZZ Exchange in terms of the total dollar value of the cumulative number of points promised across all the issuers that were onboarded
 
 ### Step-3: Fulfilling Orders from the OrderBook on the left pane of the DApp
 
@@ -65,8 +63,7 @@ https://pearlzz.herokuapp.com
 - `truffle test --network development`
 
 ## Screencast link
-
-**TBD - Youtube link most likely
+- **TBD - Youtube link most likely
 
 ## Public Ethereum wallet for certification:
 
@@ -100,7 +97,6 @@ https://pearlzz.herokuapp.com
 - (2.2.5) buy points to fulfill someone's sell order, if they choose to
 - (2.2.6) Allow individual users to transfer points from one of their own loyalty accounts to another one of their own loyalty accounts 
 
-
 ### What and How to use the PearlZZ DApp
 1. A user to place either a "Buy" or "Sell" points order of their own, adding it to the OrderBook
 2. A user to fulfill either a buy or sell order previously placed on the PearlZZExchange OrderBook by another user
@@ -122,8 +118,6 @@ https://pearlzz.herokuapp.com
 ## node_modules
 - all modules listed on the package.json file are installed under this directory
 
-
-
 ## Environment variables (not needed for running project locally)
 - Provide "PRIVATE_KEYS" environment variable, which is supposed to be a comma-separated list of private keys associated with ethereum account addresses, but omit the "0x" at the beginning of each private key
 - Also provide "INFURA_API_KEY" environment variable with your specific API KEY for Infura gateway
@@ -138,4 +132,3 @@ INFURA_API_KEY="<include your Infura API Key Here>"
 - Loyalty Rewards (based on points thresholds) as NFT Coupons & exchange of these NFT coupons 
 - Metrics on the benefits derived by the loyalty issuers from staking their "Loyalty Liability Amount" on PearlZZ
 - That is, what has PearlZZ done for their business lately :-)
-
