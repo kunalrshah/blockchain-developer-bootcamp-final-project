@@ -30,15 +30,15 @@ https://pearlzz.herokuapp.com
 - Disclaimer: The core Smart Contract based functionality of loyalty points exchange (buying, selling, cancelling, fulfilling, transferring, etc.) is the core focus of this project
 - The React front-end is functional, but does not support all such transactions fully, while it does meet all the requirements of the final project as per the bootcamp
 
-## accessing the front-end locally
-### ====> from the root directory of the project, execute `npm run dev`. This opens up `http://localhost:3000` automatically on your browser
+## Accessing the front-end locally
+### From the root directory of the project, execute `npm run dev`. This opens up `http://localhost:3000` automatically on your browser
 ## Accessing the front-end on the public URL: "https://pearlzz.herokuapp.com"
 
-## Whether you are running the DApp locally or accessing it from the public URL, here are the right sequence of steps to use the DApp
+## The right sequence of steps to use the DApp for the purpose of testing it properly
 ### Step-1: go to the either "localhost:3000/issuer" or "https://pearlzz.herokuapp.com/issuer" 
 - this seeds in the initial five "loyalty issuer" brands with their respective "Loyalty Liability Amounts" to be staked on PearlZZ
-- ===> This results in five Smart Contract transactions for "minting" new PRLZ tokens equivalent to each of the brands' "Loyalty Liability Amount" they are staking on PearlZZ
-- ===> You should see five Loyalty Issuers listed on the page with their respective "Loyalty Liability Amounts" and the corresponding "Liability Points Promised" amount
+- This results in five Smart Contract transactions for "minting" new PRLZ tokens equivalent to each of the brands' "Loyalty Liability Amount" they are staking on PearlZZ
+- You should see five Loyalty Issuers listed on the page with their respective "Loyalty Liability Amounts" and the corresponding "Liability Points Promised" amount
 ### Step-2: Either click on "Go to Dashboard" from the Issuers page or go straight to either "localhost:3000" or "https://pearlzz.herokuapp.com"
 
 - As soon as you go to this page, 
@@ -86,8 +86,8 @@ https://pearlzz.herokuapp.com
 - (2.1.4) The intention is to keep the 10 Ganache addresses configurable for the person testing from Consensys perspective to put in their own 10 addresses
 
 ### (2.2) PearlZZ Exchange - PRLZ Token as a translation mechanism for the peer-to-peer exchange (trading) of Loyalty Points earned:
-- The PearlZZ cryptocurrency (PRLZ) is the "fungible (value translation) medium" by which to enable the exchange of loyalty points 
-- across a consumer's different loyalty accounts 
+- The PearlZZ (PRLZ) token is the "fungible (value translation) medium" by which to enable the exchange of loyalty points 
+- across a single consumer's different loyalty accounts 
 - or across different consumer's individual loyalty accounts
 - But, PRLZ is purposely not designed as a true ERC20 token, is not meant to be traded as an ERC20 token
 - (2.2.1) Allow individual users to place "buy points" orders, to add to a specific loyalty account in their wallet 
