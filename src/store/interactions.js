@@ -21,8 +21,10 @@ export const loadWeb3 = async (dispatch) => {
     dispatch(web3Loaded(web3))
     return web3
   } else {
-    window.alert('Please install MetaMask')
+    console.log('Please ensure that you have MetaMask browser extension installed')
+    window.alert('Please ensure that you have MetaMask browser extension installed')
     window.location.assign("https://metamask.io/")
+    return null
   }
 }
 
@@ -36,7 +38,9 @@ export const loadAccount = async (web3, dispatch) => {
     dispatch(web3AccountLoaded(account))
     return account
   } else {
-    // window.alert('Please login with MetaMask')
+    console.log('Please login with MetaMask and make sure you are connected to the correct network')
+    window.alert('Please login with MetaMask and make sure you are connected to the correct network')
+    window.location.assign("https://metamask.io/")
     return null
   }
 }
@@ -50,7 +54,8 @@ export const loadPearlZZExchange = async (web3, networkId, dispatch) => {
     dispatch(pearlzzExchangeLoaded(exchange))
     return exchange
   } catch (error) {
-    console.log('PearlZZ Contract not deployed to the current network. Please select another network with Metamask.')
+    console.log('PearlZZ Smart Contracts are not deployed to the current network. Please connect to another network from Metamask.')
+    window.alert('PearlZZ Smart Contracts are not deployed to the current network. Please connect to the correct network from Metamask.')
     return null
   }
 }

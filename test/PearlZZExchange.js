@@ -74,7 +74,7 @@ contract('PearlZZExchange', (accounts) => {
 	}) // buyPoints
 
 	describe('sellPoints', () => {
-		it.only('Ensure BuyOrderEvent fires', async () => {
+		it('Ensure SellOrderEvent fires', async () => {
 			const ordId = 1;
 			const iName = "Walmart";
 			const aId = "WL4395";
@@ -105,6 +105,41 @@ contract('PearlZZExchange', (accounts) => {
 			}, 'SellOrderEvent orderId should match the orderId provided as input');
 		}) 
 	}) // sellPoints
+
+	describe('transferPoints', () => {
+		it('Ensure TransferOrderEvent fires', async () => {
+			const TFordId = 0; // sell side of the Xfer points order
+
+			const TFiName = "Walmart";
+			const TFaId = "WL4395";
+			const TFnP = 125;
+	
+			const ATordId = 0; // buy side of the Xfer points order
+
+			const ATiName = "TCP";
+			const ATaId = "MPR56789";
+
+			const ATTFuName = "vinodkhanna";
+
+			const result = await pearlzzExchange.transferPoints(ATiName, ATaId, 
+																												TFiName, TFaId, 
+																												ATTFuName, TFnP);
+
+			console.log("-----------------------------------------");
+			console.log(result);
+			console.log("-----------------------------------------");
+
+			truffleAssert.eventEmitted(result, 'TransferOrderEvent', (evt) => {
+				console.log("This is the event object:[", evt, "].");
+				console.log("Event Buy Order Id:[", evt[0].buyOrderId, "].");
+				console.log("Event Sell Order Id:[", evt[0].sellOrderId, "].");
+
+//				assert.equal(evt[0].buyOrderId, ordId, 'OrderId did not match');
+//				assert.equal(evt[0].sellOrderId, ordId, 'OrderId did not match');
+				return true; 
+			}, 'TransferOrderEvent returned a buyOrderId, and sellOrderId for buy & sell side of the transfer transaction');
+		}) 
+	}) // transferPoints
 
 	describe('cancelSellOrder', () => {
 		it('Ensure CancelledSellOrderEvent fires', async () => {
@@ -161,4 +196,60 @@ contract('PearlZZExchange', (accounts) => {
 			}, 'CancelledSellOrderEvent orderId should match the orderId provided as input');
 		}) 
 	}) // cancelSellOrder
+
+	describe('cancelBuyOrder', () => {
+		it('Ensure CancelledBuyOrderEvent fires', async () => {
+			const ordId = 1;
+			const iName = "Walmart";
+			const aId = "WL4395";
+			const uName = "vinodkhanna";
+			const nP = 125;
+	
+			const result = await pearlzzExchange.buyPoints(iName, aId, uName, nP);
+			console.log("-----------------------------------------");
+			console.log(result);
+			console.log("-----------------------------------------");
+			truffleAssert.eventEmitted(result, 'BuyOrderEvent', (buyPointsEvt) => {
+				console.log("This is the event object:[", buyPointsEvt, "].");
+				console.log("Input Order Id:[", ordId, "].]");
+				console.log("Event Order Id:[", buyPointsEvt[0].orderId, "].");
+				console.log("Event Issuer:[", buyPointsEvt[0].addToIssuer, "].");
+				console.log("Event Account:[", buyPointsEvt[0].addToAccount, "].");
+				console.log("Event User:[", buyPointsEvt[0].addToUser, "].");
+				console.log("Event Num Of Points:[", buyPointsEvt[0].numOfPoints, "].");
+
+				assert.equal(buyPointsEvt[0].orderId, ordId, 'OrderId did not match');
+				assert.equal(buyPointsEvt[0].addToIssuer, iName, 'Issuer Name did not match');
+				assert.equal(buyPointsEvt[0].addToAccount, aId, 'Account Id did not match');
+				assert.equal(buyPointsEvt[0].addToUser, uName, 'User Name did not match');
+				assert.equal(buyPointsEvt[0].numOfPoints, nP, 'Num of Points did not match');
+				return true; 
+			}, 'BuyOrderEvent orderId should match the orderId provided as input');
+
+			const cancelResult = await pearlzzExchange.cancelBuyOrder(ordId);
+
+			console.log("-----------------------------------------");
+			console.log("This is the result from the cancelBuyOrder:[", cancelResult, "].");
+			console.log("-----------------------------------------");
+
+			truffleAssert.eventEmitted(cancelResult, 'CancelledBuyOrderEvent', (cancelledBuyOrderEvent) => {
+				console.log("This is the event object:[", cancelledBuyOrderEvent, "].");
+
+//				console.log("Input Order Id:[", ordId, "].]");
+//				console.log("Event Order Id:[", cancelledBuyOrderEvent[1].orderId, "].");
+//				console.log("Event Order Id:[", cancelledBuyOrderEvent[0].orderId, "].");
+//				console.log("Event Issuer:[", cancelledBuyOrderEvent[0].addToIssuer, "].");
+//				console.log("Event Account:[", cancelledBuyOrderEvent[0].addToAccount, "].");
+//				console.log("Event User:[", cancelledBuyOrderEvent[0].addToUser, "].");
+//				console.log("Event Num Of Points:[", cancelledBuyOrderEvent[0].numOfPoints, "].");
+//
+//				assert.equal(cancelledBuyOrderEvent[0].orderId, ordId, 'OrderId did not match');
+//				assert.equal(cancelledBuyOrderEvent[0].addToIssuer, iName, 'Issuer Name did not match');
+//				assert.equal(cancelledBuyOrderEvent[0].addToAccount, aId, 'Account Id did not match');
+//				assert.equal(cancelledBuyOrderEvent[0].addToUser, uName, 'User Name did not match');
+//				assert.equal(cancelledBuyOrderEvent[0].numOfPoints, nP, 'Num of Points did not match');
+				return true; 
+			}, 'CancelledBuyOrderEvent orderId should match the orderId provided as input');
+		}) 
+	}) // cancelBuyOrder
 })

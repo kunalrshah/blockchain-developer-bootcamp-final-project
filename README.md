@@ -1,9 +1,9 @@
-kunalrshah - Final project - PearlZZ Unified Loyalty Wallet and Peer-to-Peer Points Exchange
+kunalrshah - Final project - PearlZZ Peer-to-Peer Loyalty Points Exchange
 
 MVP Scope for the Project:
--- a B2B Loyalty Alliances Marketplace
--- a Unified Loyalty Wallet +
 -- a loyalty points exchange (points trading marketplace)
+-- a Unified Loyalty Wallet +
+-- a B2B Loyalty Alliances Marketplace
 
 ## Deployed version url:
 
@@ -13,30 +13,60 @@ https://pearlzz.herokuapp.com
 
 ### Prerequisites
 
-- Node.js >= v14.18.1
-- Truffle and Ganache
 - npm
+- Node.js >= v14.18.1
+- Truffle 
+- Ganache
 - clone the repository from "https://github.com/kunalrshah/blockchain-developer-bootcamp-final-project"
 
 ### Deployment of Contracts
 
 - Run `npm install` in project root to install all relevant dependencies
-- Run Ganache local blockchain on port `8545` 
+- Run local blockchain using Ganache-cli on port `8545` 
 - `truffle migrate --network development`
 - `truffle test --network development`
 
-### Frontend
+### Testing the Frontend 
+- Disclaimer: The core Smart Contract based functionality of loyalty points exchange (buying, selling, cancelling, fulfilling, transferring, etc.) is the core focus of this project
+- The React front-end is functional, but does not support all such transactions fully, while it does meet all the requirements of the final project as per the bootcamp
 
-- `npm run dev`
-- Opens `http://localhost:3000` automatically on your browser
+## accessing the front-end locally
+# ====> from the root directory of the project, execute `npm run dev`. This opens up `http://localhost:3000` automatically on your browser
+- 
+## Accessing the front-end on the public URL: "https://pearlzz.herokuapp.com"
+
+### Whether you are running the DApp locally or accessing it from the public URL, here are the right sequence of steps to use the DApp
+## Step-1: go to the either "localhost:3000/issuer" or "https://pearlzz.herokuapp.com/issuer" 
+- this seeds in the initial five "loyalty issuer" brands with their respective "Loyalty Liability Amounts" to be staked on PearlZZ
+- ===> This results in five Smart Contract transactions for "minting" new PRLZ tokens equivalent to each of the brands' "Loyalty Liability Amount" they are staking on PearlZZ
+- ===> You should see five Loyalty Issuers listed on the page with their respective "Loyalty Liability Amounts" and the corresponding "Liability Points Promised" amount
+- 
+## Step-2: Either click on "Go to Dashboard" from the Issuers page or go straight to either "localhost:3000" or "https://pearlzz.herokuapp.com"
+
+# ====> As soon as you go to this page, 
+- ====> the DApp is designed to seed in four test "Buy" orders and four test "Sell" orders on the "PearlZZ Exchange"
+
+# ====> Please note the "Market Cap" value on the top left portion of the screen
+- ====> This is the total amount of "Loyalty Liability Amounts" across all the five "loyalty issuer" brands that were configured in the first step
+- ====> And, it is also the number of PRLZ tokens minted as a result on the PearlZZ Exchange
+- ====> Thereby making it the "Market Cap" of the PearlZZ Exchange in terms of the total dollar value of the cumulative number of points promised across all the issuers that were onboarded
+
+## Step-3: Fulfilling Orders from the OrderBook on the left pane of the DApp
+
+# The orders placed by any users are all shown on the "Order Book" 
+- A user could fulfill an order - by selecting it from the Order Book
+- Which opens up a new dialog box to place the "opposite" order of the order selected from the Order Book
+- and submitting that "opposite" order as a fulfillment order 
+- That is, for a "Buy Points Order" on the order book to be fulfilled - another user has to submit a corresponding "Sell Points Order"
+- And, similarly for a "Sell Points Order" on the order book to be fulfilled - another user has to submit a corresponding "Buy Points Order"
+- Currently, this project has only been tested with a single user (single Metamask address)
+- But, this project doesn't end with the Bootcamp and I'll continue to build it further and continue to add more functionality
 
 ### How to seed the PearlZZExchange with Loyalty Issuers & their Loyalty Liabilities; as well as add multiple test user accounts and their respective Loyalty Membership accounts & points
 
 - `truffle migrate --network development`
 - `truffle console --network development`
-- `truffle exec scripts/seed-pearlzz-exchange-issuers.js`
-- `truffle exec scripts/seed-pearlzz-exchange-loyalty-accounts-n-points.js`
-- `truffle exec scripts/seed-pearlzz-exchange-buy-n-sell-oders.js`
+- `truffle exec scripts/seed-pearlzz-exchange-buy-n-sell-oders.js` initiated by different account addresses
 
 ## Screencast link
 
@@ -51,7 +81,7 @@ TBD - Youtube link most likely
 # 1. PearlZZ B2B Loyalty Alliances Marketplace
 - (1.1) Onboard a loyalty issuer brand or a business onto PearlZZ allowing them to stake their Loyalty Liability Amount (LLA) from their balancesheet onto PearlZZ
 - (1.2) Each time a new issuer brand/business is onboarded, or each time they stake more Loyalty Liability Amount, PearlZZ will "mint" PRLZ tokens adding to its totalSupply
-- (1.3) For the purposes of this final project, we've assumed an alliance of five issuers for our prototype solution - this may change based on the success/failure of the batch seeding of test data
+- (1.3) For the purposes of this final project, we've assumed an alliance of five issuers for our prototype solution
 
 # 2. PearlZZ Wallet and PearlZZ Exchange
 

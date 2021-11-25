@@ -29,7 +29,7 @@ contract PearlZZExchange is GenericContract, Ownable {
   // Variables
 	//
 
-//	address constant ETHER_ADDR = address(0); 
+	//	address constant ETHER_ADDR = address(0); 
 
 	/// @notice account addresses provided
 	address[] public accounts;
@@ -308,6 +308,19 @@ contract PearlZZExchange is GenericContract, Ownable {
 		minted = pearlzzToken.mint(_stakedLoyaltyLiability, _totalPtsPromised);
 		return(minted);
 	} // mint()
+
+//	/// @notice getBuyOrders
+//	/// @return list of all buy orders
+//	function getBuyOrders() public view onlyOwner returns(mapping(uint256 => BuyOrderStruct) memory) {
+//		return(buyOrders);
+//	}
+//
+//	/// @notice getSellOrders
+//	/// @return list of all sell orders
+//	function getSellOrders() public view onlyOwner returns(mapping(uint256 => SellOrderStruct) memory) {
+//		return(sellOrders);
+//	}
+//
 
 	/// @notice getAccounts
 	/// @return list of account addresses

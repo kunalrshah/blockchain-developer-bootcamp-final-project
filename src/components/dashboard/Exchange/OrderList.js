@@ -86,10 +86,12 @@ function OrderList(props) {
           tempExchange.methods.buyPoints(buy.issuer, (12345 + index).toString(), 'admin', buy.points)
           .send({ from: accounttemp }).on('transactionHash', (hash) => {
             dispatch(addBuy(buy));
-            // console.log("hash",hash);
+         		window.alert("Transaction Hash for the Buy Points Order transaction is:[", hash, "].");
+         		console.log("Transaction Hash for the Buy Points Order transaction is:[", hash, "].");
           })
         } catch {
-          console.log('Error While Buy')
+					window.alert("Error occurred while submitting a new Buy Points order")
+					console.log("Error occurred while submitting a new Buy Points order")
         }
            
 
@@ -100,10 +102,12 @@ function OrderList(props) {
         tempExchange.methods.buyPoints(sell.issuer, (12345 + index).toString(), 'admin', sell.points)
         .send({ from: accounttemp }).on('transactionHash', (hash) => {
           dispatch(addSell(sell));
-          // console.log("hash",hash);
+         	window.alert("Transaction Hash for the Sell Points Order transaction is:[", hash, "].");
+         	console.log("Transaction Hash for the Sell Points Order transaction is:[", hash, "].");
         })
       } catch {
-        console.log('Error While Sell')
+					window.alert("Error occurred while submitting a new Sell Points order")
+					console.log("Error occurred while submitting a new Sell Points order")
       }
 
   })

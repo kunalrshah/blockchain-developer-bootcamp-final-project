@@ -86,18 +86,23 @@ function Issuer() {
   }, [])
 
   const mintPearlZZ = async (account, issuer, exchange) => {
-    let success = await
-      exchange.methods.mint(issuer.loyalty, issuer.pointsLiability)
-        .send({ from: account }).on('transactionHash', (hash) => {
-          //dispatch(addingLoyaltyIssuer(issuerName))
-          issuer.ppvalue = issuer.loyalty/issuer.pointsLiability;
-          console.log("ISSUER:", issuer)
-          dispatch(addIssuer(issuer));
-          console.log(hash);
-        })
-
-    console.log("Minting Success:[", success, "].")
-  }
+		let success = 0
+		try {
+	    let success = await
+	      exchange.methods.mint(issuer.loyalty, issuer.pointsLiability)
+	        .send({ from: account }).on('transactionHash', (hash) => {
+	          //dispatch(addingLoyaltyIssuer(issuerName))
+	          issuer.ppvalue = issuer.loyalty/issuer.pointsLiability;
+	          dispatch(addIssuer(issuer));
+	    			console.log("Loyalty Issuer:[", issuer, "added and PRLZ minted successfully")
+	    			window.alert(issuer)
+	        })
+		} // try
+		catch {
+					window.alert("Seeding of Loyalty Issuer has failed.");
+					console.log("Seeding of Loyalty Issuer:", issuer, " has failed.");
+		} // catch
+  } // mintPearlZZ
 
   const onSubmit = async () => {
     if (name.trim() == '') {
