@@ -37,19 +37,21 @@ https://pearlzz.herokuapp.com
 ## The right sequence of steps to use the DApp for the purpose of testing it properly
 ### Step-1: go to the either "localhost:3000/issuer" or "https://pearlzz.herokuapp.com/issuer" 
 - this seeds in the initial five "loyalty issuer" brands with their respective "Loyalty Liability Amounts" to be staked on PearlZZ
-- This results in five Smart Contract transactions for "minting" new PRLZ tokens equivalent to each of the brands' "Loyalty Liability Amount" they are staking on PearlZZ
-- You should see five Loyalty Issuers listed on the page with their respective "Loyalty Liability Amounts" and the corresponding "Liability Points Promised" amount
+- This results in five Smart Contract transactions for "minting" new PRLZ tokens 
+- This is equivalent to each of the brands' "Loyalty Liability Amount" they are staking on PearlZZ
+- You should see five Loyalty Issuers listed on the page with their respective "Loyalty Liability Amounts" 
+- and the corresponding "Liability Points Promised" amount
+- These are transactions that would require metamask signing of transactions
 ### Step-2: Either click on "Go to Dashboard" from the Issuers page or go straight to either "localhost:3000" or "https://pearlzz.herokuapp.com"
-
 - As soon as you go to this page, 
 - the DApp is designed to seed in four test "Buy" orders and four test "Sell" orders on the "PearlZZ Exchange"
+- This seeding of 4 buy orders and 4 sell orders would also require a metamask signing of transactions
 - Please note the "Market Cap" value on the top left portion of the screen
-- This is the total amount of "Loyalty Liability Amounts" across all the five "loyalty issuer" brands that were configured in the first step
+- This is the total of "Loyalty Liability Amounts" across all the five "loyalty issuers" that were configured in the first step
 - And, it is also the number of PRLZ tokens minted as a result on the PearlZZ Exchange
-- Thereby making it the "Market Cap" of the PearlZZ Exchange in terms of the total dollar value of the cumulative number of points promised across all the issuers that were onboarded
-
+- Thereby making it the "Market Cap" of the PearlZZ Exchange in terms of the dollar value LLA staked
+- which also corresponds to the cumulative number of points promised across all the issuers that were onboarded
 ### Step-3: Fulfilling Orders from the OrderBook on the left pane of the DApp
-
 - The orders placed by any users are all shown on the "Order Book" 
 - A user could fulfill an order - by selecting it from the Order Book
 - Which opens up a new dialog box to place the "opposite" order of the order selected from the Order Book
@@ -58,33 +60,23 @@ https://pearlzz.herokuapp.com
 - And, similarly for a "Sell Points Order" on the order book to be fulfilled - another user has to submit a corresponding "Buy Points Order"
 - Currently, this project has only been tested with a single user (single Metamask address)
 - But, this project doesn't end with the Bootcamp and I'll continue to build it further and continue to add more functionality
-
 ### How to run the truffle tests, five tests should pass successfully
 - `truffle test --network development`
-
 ## Screencast link
 - **TBD - Youtube link most likely
-
 ## Public Ethereum wallet for certification:
-
 `0x8BE4cB72302C02e5BDd20c95F3E94048d078086F`
-
 # Project description
-
 ## 1. PearlZZ B2B Loyalty Alliances Marketplace
 - (1.1) Onboard a loyalty issuer brand or a business onto PearlZZ allowing them to stake their Loyalty Liability Amount (LLA) from their balancesheet onto PearlZZ
 - (1.2) Each time a new issuer brand/business is onboarded, or each time they stake more Loyalty Liability Amount, PearlZZ will "mint" PRLZ tokens adding to its totalSupply
 - (1.3) For the purposes of this final project, we've assumed an alliance of five issuers for our prototype solution
 - (1.4) These five issuers are seeded in when you visit either "localhost:3000/issuer" or "pearlzz.herokuapp.com/issuer"
-
 ## 2. PearlZZ Wallet and PearlZZ Exchange
-
 ### - (2.1) PearlZZ Wallet
 - (2.1.1) Allow individual users of PearlZZ to add/maintain their Loyalty Accounts to the PearlZZ Wallet
-- (2.1.2) This project is using the 10 starter accounts that come with Ganache to seed in some Loyalty Accounts per address (signifying a different user per address) 
-- (2.1.3) This project is also seeding in some "Buy Points" and "Sell Points" orders on the behalf of some of the addresses
-- (2.1.4) The intention is to keep the 10 Ganache addresses configurable for the person testing from Consensys perspective to put in their own 10 addresses
-
+- (2.1.2) For the most part - for each new address you utilize, the behavior and sequence of test steps remain the same
+- (2.1.3) same seeding of issuers and buy/sell orders is performed
 ### (2.2) PearlZZ Exchange - PRLZ Token as a translation mechanism for the peer-to-peer exchange (trading) of Loyalty Points earned:
 - The PearlZZ (PRLZ) token is the "fungible (value translation) medium" by which to enable the exchange of loyalty points 
 - across a single consumer's different loyalty accounts 
