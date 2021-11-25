@@ -127,7 +127,7 @@ PRIVATE_KEYS="<provide comma-separated list of private keys corresponding to as 
 INFURA_API_KEY="<include your Infura API Key Here>"
 ```
 
-## TODO features
+## Work to be continued on the project
 - B2B Loyalty Alliances Marketplace - complete functionality to create a new Alliance, add new loyalty issuer members to the alliance
 - Loyalty Rewards (based on points thresholds) as NFT Coupons & exchange of these NFT coupons 
 - Metrics on the benefits derived by the loyalty issuers from staking their "Loyalty Liability Amount" on PearlZZ
