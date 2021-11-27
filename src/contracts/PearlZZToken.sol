@@ -18,10 +18,10 @@ contract PearlZZToken is GenericContract, Ownable {
   // Variables
 
 	/// @notice name represents the name of the PearlZZ Token
-  string public name = "PearlZZ";
+  string public name = "";
 
 	/// @notice symbol is the symbol of the PearlZZ Token (PRLZ)
-  string public symbol = "PRLZ";
+  string public symbol = "";
 
 	/// @notice version
   string public version = '1.0'; 
