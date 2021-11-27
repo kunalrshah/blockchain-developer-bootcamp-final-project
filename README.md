@@ -99,8 +99,9 @@ https://pearlzz.herokuapp.com
 ### - (2.2) PearlZZ Wallet - the actual creation of Wallet and maintenance of accounts on the Wallet have been left out of this project for now
 - (2.2.1) Allow individual users of PearlZZ to add/maintain their Loyalty Accounts to the PearlZZ Wallet
 - (2.2.2) Currently, the React front-end shows some placeholder Wallet user interface, but the underlying "Member.sol" solidity code was taken out for simplification
-- (2.2.3) Similary, the actual smart contract for managing the Loyalty Issuers and their Loyalty Liability Amount (LLA) was also taken out for this project
-- Thus, effectively this bootcamp final project has been mainly focused on the above mentioned (2.1.x) items for the buy/sell/transfer of points from PearlZZ Exchange
+- (2.2.3) Similary, the actual smart contract for managing the Loyalty Issuers and their Loyalty Liability Amount (LLA) was deemed to be managed off-chain
+- (2.2.4) However, the simulation of when a loyalty issuer is added to PearlZZ off-chain component is incorporated on the front-end
+- (2.2.5) And, it therefore results in real "minting" of PearlZZ tokens via the PearlZZExchange.min() method, which in turn calls the PearlZZToken.mint() method
 # Directory structure
 ## src/
 - contracts - All Solidity Smart Contract source code is here
