@@ -39,6 +39,19 @@ class Pearlzz extends Component {
 			// window.alert('Pearlzz.js - PearlZZExchange contract not detected on the current network. Please select another network with Metamask.')
 			return
 		}
+
+		let tempTokenName = await pearlzzExchange.methods.pearlzzTokenName().call();
+		this.setState({
+			...this.state, 
+			tempTokenName
+		})
+	
+		let tempTokenSymbol = await pearlzzExchange.methods.pearlzzTokenSymbol().call();
+		this.setState({
+			...this.state, 
+			tempTokenSymbol
+		})
+
 		let tempcap = await pearlzzExchange.methods.pearlzzTokenTotalSupply().call();
 		var formatter = new Intl.NumberFormat('en-US', {
 			style: 'currency',
@@ -83,7 +96,7 @@ class Pearlzz extends Component {
 				<div className="row align-items-stretch">
 					<nav id="sidebarMenu" className="col-md-3 col-lg-3 d-md-block bg-dark text-white navbar-dark mainsidebar collapse text-center">
 						<div className="d-flex flex-row align-items-center justify-content-center p-3">
-							<h3 className="px-4 fw-light"><i className="bi bi-arrow-left-right text-secondary me-3"></i>PearlZZ Exchange</h3>
+							<h3 className="px-4 fw-light"><i className="bi bi-arrow-left-right text-secondary me-3"></i>{this.state.tempTokenName} ({this.state.tempTokenSymbol}) Exchange</h3>
 						</div>
 						<div className="d-flex flex-row align-items-center justify-content-center p-3">
 							<h5 className="p-2 fw-light text-light"><i className="bi bi-pie-chart-fill text-secondary me-3"></i>Marketcap {this.state.marketcap}</h5>
