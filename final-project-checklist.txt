@@ -28,7 +28,6 @@ Please answer the following questions. Does your project:
 --Updates the frontend if the transaction is successful or not? 	-- YES
 
 8. Hosted on Github Pages, Heroku, Netlify, Fleek, or some other free frontend service that gives users a public interface to your decentralized application? (That address should be in your README.md document) YES
-- Hosted on Heroku (https://pearlzz.herokuapp.com)
 
 9. Have clear instructions for: 
 1) Installing dependencies for your project 	-- YES
@@ -37,7 +36,9 @@ Please answer the following questions. Does your project:
 - ===> This question is not clear. But, there isn't any other special server required, outside of "ganache-cli" based local blockchain to test the project out locally
 3) Running your smart contract unit tests and which port a local testnet should be running on. 	-- YES
 - ===> The local ganache-cli should be running on the 8545 port
-**10. A screencast of you walking through your project? 	-- YES/NO
+10. A screencast of you walking through your project? 	-- YES
+- published on Youtube 
+- https://youtu.be/-VXiubRWS4s
 
 
 Congratulations on finishing your final project!

@@ -35,6 +35,8 @@ https://pearlzz.herokuapp.com
 ## Accessing the front-end locally
 ### From the root directory of the project, execute `npm run dev`. This opens up `http://localhost:3000` automatically on your browser
 ## Accessing the front-end on the public URL: "https://pearlzz.herokuapp.com"
+- https://pearlzz.herokuapp.com/issuer (is the first place to go)
+- https://pearlzz.herokuapp.com (after completing the first step)
 
 ## The right sequence of steps to use the DApp for the purpose of testing it properly
 ### Step-1: go to the either "localhost:3000/issuer" or "https://pearlzz.herokuapp.com/issuer" 
@@ -71,7 +73,8 @@ https://pearlzz.herokuapp.com
 ### How to run the truffle tests, five tests should pass successfully
 - `truffle test --network development`
 ## Screencast link
-- **TBD - Youtube link most likely
+- https://youtu.be/-VXiubRWS4s
+- It is 11:53 minutes long. Apologies for the length and some background noise.
 ## Public Ethereum wallet for certification:
 `0x8BE4cB72302C02e5BDd20c95F3E94048d078086F`
 # Project description
