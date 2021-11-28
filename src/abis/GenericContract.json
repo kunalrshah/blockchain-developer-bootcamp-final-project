@@ -401,8 +401,8 @@
     "42": {
       "events": {},
       "links": {},
-      "address": "0xD42b238917871c8471F64f6878894439d9B6a80C",
-      "transactionHash": "0x75bb7667a018144f9edb925d8929c610e8cacb0f8b8f9950c806d563c6295465"
+      "address": "0x289111b3Dd9909aBA54c87638098Ac5282a13025",
+      "transactionHash": "0xdc405ee06452094b252f71fac697820ae012e8079d99a3a022b26b334f9b5d08"
     },
     "1637551273688": {
       "events": {},
@@ -430,7 +430,7 @@
     }
   },
   "schemaVersion": "3.4.3",
-  "updatedAt": "2021-11-28T16:03:33.019Z",
+  "updatedAt": "2021-11-28T16:20:51.093Z",
   "networkType": "ethereum",
   "devdoc": {
     "author": "Kunal R. Shah",

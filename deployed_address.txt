@@ -1,3 +1,4 @@
-PearlZZExchange Contract Address: 0x1350FcfFD5CfDB26c01Df8aAA029069d383d572b
+Original PearlZZExchange Contract Address: 0x1350FcfFD5CfDB26c01Df8aAA029069d383d572b
+The most recent update (November 28th 2021, 11:46am ET) to PearlZZExchange Contract is at Address: 0x49b65295a0910c84026b572311F61E237103eE74
 Test Network: Kovan
 Test Network Id: 42

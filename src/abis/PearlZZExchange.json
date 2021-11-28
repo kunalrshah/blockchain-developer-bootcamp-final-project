@@ -37640,10 +37640,337 @@
   },
   "networks": {
     "42": {
-      "events": {},
+      "events": {
+        "0x5eb9ea81b3c3f72e11d085eade3956c2a6102a16c6aa97daf81b4d364e0b7f78": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "address",
+              "name": "addressValue",
+              "type": "address"
+            }
+          ],
+          "name": "AddressValue",
+          "type": "event"
+        },
+        "0xeae4db855d77269e36cfbdfca36fd06f9e17fec373cbbd4eae1d9eaf646b3378": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "orderId",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "string",
+                  "name": "addToIssuer",
+                  "type": "string"
+                },
+                {
+                  "internalType": "string",
+                  "name": "addToAccount",
+                  "type": "string"
+                },
+                {
+                  "internalType": "string",
+                  "name": "addToUser",
+                  "type": "string"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "numOfPoints",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "buyOrderTimestamp",
+                  "type": "uint256"
+                }
+              ],
+              "indexed": false,
+              "internalType": "struct PearlZZExchange.BuyOrderStruct",
+              "name": "buyOrder",
+              "type": "tuple"
+            }
+          ],
+          "name": "BuyOrderEvent",
+          "type": "event"
+        },
+        "0xeac7a587babe9b833caa40c38eeb7c87af19b8fc931734fb96640a2be2ee0740": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "orderId",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "string",
+                  "name": "addToIssuer",
+                  "type": "string"
+                },
+                {
+                  "internalType": "string",
+                  "name": "addToAccount",
+                  "type": "string"
+                },
+                {
+                  "internalType": "string",
+                  "name": "addToUser",
+                  "type": "string"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "numOfPoints",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "buyOrderTimestamp",
+                  "type": "uint256"
+                }
+              ],
+              "indexed": false,
+              "internalType": "struct PearlZZExchange.BuyOrderStruct",
+              "name": "buyOrder",
+              "type": "tuple"
+            }
+          ],
+          "name": "CancelledBuyOrderEvent",
+          "type": "event"
+        },
+        "0xc646bbe4e8c2ab22a61e0a3d8a45405218a9f271b0316b1399a89d35b9c9b213": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "orderId",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "string",
+                  "name": "takeFromIssuer",
+                  "type": "string"
+                },
+                {
+                  "internalType": "string",
+                  "name": "takeFromAccount",
+                  "type": "string"
+                },
+                {
+                  "internalType": "string",
+                  "name": "takeFromUser",
+                  "type": "string"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "numOfPoints",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "sellOrderTimestamp",
+                  "type": "uint256"
+                }
+              ],
+              "indexed": false,
+              "internalType": "struct PearlZZExchange.SellOrderStruct",
+              "name": "sellOrder",
+              "type": "tuple"
+            }
+          ],
+          "name": "CancelledSellOrderEvent",
+          "type": "event"
+        },
+        "0x7906d666fc472db47577d0b2a6027b0a56c9a4949140045bdd6b41821e28fd17": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "buyOrderId",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "sellOrderId",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "fulfilledTimestamp",
+              "type": "uint256"
+            }
+          ],
+          "name": "FulfilledBuyOrderEvent",
+          "type": "event"
+        },
+        "0x3362d367149d6d71a34b5ffbd031de9746467b3a85e0eab5fa4a115e7f09959d": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "sellOrderId",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "buyOrderId",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "fulfilledTimestamp",
+              "type": "uint256"
+            }
+          ],
+          "name": "FulfilledSellOrderEvent",
+          "type": "event"
+        },
+        "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "previousOwner",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "newOwner",
+              "type": "address"
+            }
+          ],
+          "name": "OwnershipTransferred",
+          "type": "event"
+        },
+        "0x7bb6cebec3856ae17aa8856031d3e9aaf1adcb165ba25c2c3860b09ca566dca0": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "orderId",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "string",
+                  "name": "takeFromIssuer",
+                  "type": "string"
+                },
+                {
+                  "internalType": "string",
+                  "name": "takeFromAccount",
+                  "type": "string"
+                },
+                {
+                  "internalType": "string",
+                  "name": "takeFromUser",
+                  "type": "string"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "numOfPoints",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "sellOrderTimestamp",
+                  "type": "uint256"
+                }
+              ],
+              "indexed": false,
+              "internalType": "struct PearlZZExchange.SellOrderStruct",
+              "name": "sellOrder",
+              "type": "tuple"
+            }
+          ],
+          "name": "SellOrderEvent",
+          "type": "event"
+        },
+        "0x6f36b77e2ef64a7324f5cd8317ca000872b22a05828b75f7fc55d2cb26683b4e": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "address[]",
+              "name": "_accounts",
+              "type": "address[]"
+            }
+          ],
+          "name": "SetAccountsEvent",
+          "type": "event"
+        },
+        "0xfd2abbea384df75f62b132a6a67b0850fb81e1e236f9b14ad1df8ea89eedc39d": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "string",
+              "name": "stringValue",
+              "type": "string"
+            }
+          ],
+          "name": "StrValue",
+          "type": "event"
+        },
+        "0x0dd266099c5bd53c2500cfa4a9b1653f80fb452bfa84a5a074b75184305417ed": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "buyOrderId",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "sellOrderId",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "transferTimestamp",
+              "type": "uint256"
+            }
+          ],
+          "name": "TransferOrderEvent",
+          "type": "event"
+        },
+        "0x4081b1f389b7ec6644d556820d629e3fa080b3d073d96e5bbad7383eb584011b": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "uintValue",
+              "type": "uint256"
+            }
+          ],
+          "name": "UintValue",
+          "type": "event"
+        }
+      },
       "links": {},
-      "address": "0x1350FcfFD5CfDB26c01Df8aAA029069d383d572b",
-      "transactionHash": "0x6a8e2123f6004384c4e6255cf444fc9fdfb9a9d3d0c8d4bee21955c1fd35aca9"
+      "address": "0x49b65295a0910c84026b572311F61E237103eE74",
+      "transactionHash": "0xb691ee674475ca1c8997a8cf5cba099c3894aac60431f739888e695a3dbcc2a2"
     },
     "1637551273688": {
       "events": {},
@@ -37998,7 +38325,7 @@
     }
   },
   "schemaVersion": "3.4.3",
-  "updatedAt": "2021-11-28T16:03:33.036Z",
+  "updatedAt": "2021-11-28T16:20:51.136Z",
   "networkType": "ethereum",
   "devdoc": {
     "author": "Kunal R. Shah",
