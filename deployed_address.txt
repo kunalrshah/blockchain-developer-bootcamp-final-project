@@ -1,3 +1,3 @@
 PearlZZExchange Contract Address: 0x1350FcfFD5CfDB26c01Df8aAA029069d383d572b
-Test Network User: Kovan
+Test Network: Kovan
 Test Network Id: 42
