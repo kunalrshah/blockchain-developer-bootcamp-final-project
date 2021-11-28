@@ -40,6 +40,7 @@ https://pearlzz.herokuapp.com
 
 ## The right sequence of steps to use the DApp for the purpose of testing it properly
 ### Step-1: go to the either "localhost:3000/issuer" or "https://pearlzz.herokuapp.com/issuer" 
+- This must be executed with the "Contract Owner" address - For example, the first account from a local Ganache or Ganache-CLI instance
 - this seeds in the initial five "loyalty issuer" brands with their respective "Loyalty Liability Amounts" to be staked on PearlZZ
 - This results in five Smart Contract transactions for "minting" new PRLZ tokens 
 - This is equivalent to each of the brands' "Loyalty Liability Amount" they are staking on PearlZZ
@@ -49,6 +50,7 @@ https://pearlzz.herokuapp.com
 - The "Marketcap" value displayed on the home page is retrieved from the "pearlzzTokenTotalSupply()" method from the PearlZZExchange smart contract on the blockchain 
 - Which in turn calls the totalSupply() method on the member variable of type PearlZZToken (another smart contract embedded within the PearlZZExchange) 
 ### Step-2: Either click on "Go to Dashboard" from the Issuers page or go straight to either "localhost:3000" or "https://pearlzz.herokuapp.com"
+- This step can be executed with any account address (not limited to the PearlZZExchange contract owner addresss)
 - As soon as you go to this page, 
 - the DApp is designed to seed in four test "Buy" orders and four test "Sell" orders on the "PearlZZ Exchange"
 - This seeding of 4 buy orders and 4 sell orders would also require a metamask signing of transactions

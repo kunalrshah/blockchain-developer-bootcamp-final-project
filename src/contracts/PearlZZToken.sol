@@ -62,6 +62,15 @@ contract PearlZZToken is GenericContract, Ownable {
 
 	} // constructor
 
+	/// @notice Use this during testing purposes only for resetting the total supply for PearlZZToken to Zero
+	/// @dev this is for testing scenarios only, and can be used as the first step before seeding in Loyalty Issuer data
+	/// @return success or failure boolean (true or false)
+	function resetTotalSupplyForTesting() private onlyOwner returns(bool success) {
+		totalSupply = 0;
+		success = true;
+		return(success);
+	} // function resetTotalSupplyForTesting()
+
 	/// @notice Use this when onboarding the Loyalty Liability from a Loyalty Issuer 
 	/// @notice Or when increasing an existing liability commitment from already onboard Loyalty Issuer
 	/// @dev This contract will not provide an option to decrease the Staked Loyalty Liability once committed
@@ -78,6 +87,5 @@ contract PearlZZToken is GenericContract, Ownable {
 		minted = true;
 		return(minted);
 	} // function mint()
-
 } // PearlZZToken
 

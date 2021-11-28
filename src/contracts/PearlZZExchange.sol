@@ -165,7 +165,7 @@ contract PearlZZExchange is GenericContract, Ownable {
 	/// @param numOfPoints Number of points to Buy from the PearlZZ Points Exchange
 	/// @return OrderId for the newly created buy order
 	function buyPoints(string memory addToIssuer, string memory addToAccount, 
-						string memory addToUser, uint256 numOfPoints) public onlyOwner returns(uint256) {
+						string memory addToUser, uint256 numOfPoints) public returns(uint256) {
 		numOfBuyOrders = numOfBuyOrders.add(1);
 		buyOrders[numOfBuyOrders] = BuyOrderStruct(numOfBuyOrders, addToIssuer, addToAccount, 
 																	addToUser, numOfPoints, 
@@ -184,7 +184,7 @@ contract PearlZZExchange is GenericContract, Ownable {
 	/// @return buyOrderId the same orderId which was chosen for fulfillment by the user from the PearlZZ DApp
 	/// @return sellOrderId Newly created sellOrder to fulfill the buyOrder
 	function fulfillABuyOrder(uint256 buyOrderId, string memory takeFromIssuer, 
-						string memory takeFromAccount, string memory takeFromUser) public onlyOwner returns(uint256, uint256) {
+						string memory takeFromAccount, string memory takeFromUser) public  returns(uint256, uint256) {
 		require(buyOrderId > 0 && buyOrderId <= numOfBuyOrders, "Error: orderId out of valid range. Invalid Id.");
 		require(!buyOrdersFulfilled[buyOrderId], "Error: Buy Order already fulfilled.");
 		require(!buyOrdersCancelled[buyOrderId], "Error: Buy Order already cancelled.");
@@ -206,7 +206,7 @@ contract PearlZZExchange is GenericContract, Ownable {
 	/// @param numOfPoints Number of points to Sell on the PearlZZ Points Exchange
 	/// @return OrderId for the newly created sell order
 	function sellPoints(string memory takeFromIssuer, string memory takeFromAccount, 
-							string memory takeFromUser, uint256 numOfPoints ) public onlyOwner returns(uint256) {
+							string memory takeFromUser, uint256 numOfPoints ) public  returns(uint256) {
 		numOfSellOrders = numOfSellOrders.add(1);
 		sellOrders[numOfSellOrders] = SellOrderStruct(numOfSellOrders, takeFromIssuer, 
 																		takeFromAccount, takeFromUser, 
@@ -225,7 +225,7 @@ contract PearlZZExchange is GenericContract, Ownable {
 	/// @return sellOrderId the same orderId which was chosen for fulfillment by the user from the PearlZZ DApp
 	/// @return buyOrderId Newly created buyOrder to fulfill the sellOrder
 	function fulfillASellOrder(uint256 sellOrderId, string memory addToIssuer, 
-							string memory addToAccount, string memory addToUser) public onlyOwner returns(uint256, uint256) {
+							string memory addToAccount, string memory addToUser) public  returns(uint256, uint256) {
 		require(sellOrderId > 0 && sellOrderId <= numOfSellOrders, "Error: orderId out of valid range. Invalid Id.");
 		require(!sellOrdersFulfilled[sellOrderId], "Error: Sell Order already fulfilled.");
 		require(!sellOrdersCancelled[sellOrderId], "Error: Sell Order already cancelled.");
@@ -252,7 +252,7 @@ contract PearlZZExchange is GenericContract, Ownable {
 													string memory addToIssuer, string memory addToAccount,
 													string memory takeFromIssuer, string memory takeFromAccount,
 													string memory addToTakeFromUser, 
-													uint256 numOfPoints) public onlyOwner returns(uint256, uint256) {
+													uint256 numOfPoints) public  returns(uint256, uint256) {
 		uint256 buyOrderId;
 		uint256 sellOrderId;
 		buyOrderId = buyPoints(addToIssuer, addToAccount, addToTakeFromUser, numOfPoints);
@@ -267,7 +267,7 @@ contract PearlZZExchange is GenericContract, Ownable {
 	/// @dev this contract keeps the IDs for the buy orders separates from sell orders
 	/// @dev Emits CancelledBuyOrderEvent(BuyOrderStruct)
 	/// @param _orderId Order Id for the buy order to be cancelled
-	function cancelBuyOrder(uint256 _orderId) public onlyOwner {
+	function cancelBuyOrder(uint256 _orderId) public  {
 		BuyOrderStruct storage buyOrder = buyOrders[_orderId];
 		require(buyOrder.orderId == _orderId, "The order doesn't exist."); 
 
@@ -285,7 +285,7 @@ contract PearlZZExchange is GenericContract, Ownable {
 	/// @dev this contract keeps the IDs for the sell orders separates from buy orders
 	/// @dev Emits CancelledSellOrderEvent(SellOrderStruct)
 	/// @param _orderId Order Id for the sell order to be cancelled
-	function cancelSellOrder(uint256 _orderId) public onlyOwner {
+	function cancelSellOrder(uint256 _orderId) public  {
 		SellOrderStruct storage sellOrder = sellOrders[_orderId];
 		require(sellOrder.orderId == _orderId, "The order doesn't exist."); // check if the order actually exists
 		// in reality we should check if the order cancellation is being requested by the same user 
@@ -311,13 +311,13 @@ contract PearlZZExchange is GenericContract, Ownable {
 
 //	/// @notice getBuyOrders
 //	/// @return list of all buy orders
-//	function getBuyOrders() public view onlyOwner returns(mapping(uint256 => BuyOrderStruct) memory) {
+//	function getBuyOrders() public view returns(mapping(uint256 => BuyOrderStruct) memory) {
 //		return(buyOrders);
 //	}
 //
 //	/// @notice getSellOrders
 //	/// @return list of all sell orders
-//	function getSellOrders() public view onlyOwner returns(mapping(uint256 => SellOrderStruct) memory) {
+//	function getSellOrders() public view returns(mapping(uint256 => SellOrderStruct) memory) {
 //		return(sellOrders);
 //	}
 //
